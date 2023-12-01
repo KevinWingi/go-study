@@ -15,5 +15,5 @@ func main() {
 
 	sum, status := sum(1, 0)
 
-	fmt.Println(fmt.Sprintf("Sum = %d, First greather than second = %s", sum, strconv.FormatBool(status)))
+	fmt.Printf("Sum = %d, First greather than second = %s", sum, strconv.FormatBool((status)))
 }
