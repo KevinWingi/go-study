@@ -1,17 +1,19 @@
 package main
 
-import "fmt";
-import "strconv";
+import (
+	"fmt"
+	"strconv"
+)
 
 func sum(a int, b int) (int, bool) {
-	return a + b, a > b;
+	return a + b, a > b
 }
 
 func main() {
-	myVar := "Hello  world";
-	println(myVar);
+	myVar := "Hello  world"
+	println(myVar)
 
-	sum, status := sum(1, 0);
+	sum, status := sum(1, 0)
 
-	fmt.Println(fmt.Sprintf("Sum = %d, First greather than second = %s", sum, strconv.FormatBool(status)));
+	fmt.Println(fmt.Sprintf("Sum = %d, First greather than second = %s", sum, strconv.FormatBool(status)))
 }
