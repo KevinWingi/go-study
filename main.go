@@ -11,17 +11,24 @@ func sum(a int, b int) (int, bool) {
 }
 
 func main() {
+	print()
+	server()
+}
+
+func home(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("HELLO WORLD"))
+}
+
+func server() {
+	http.HandleFunc("/", home)
+	http.ListenAndServe(":8080", nil)
+}
+
+func print() {
 	myVar := "Hello  world"
 	println(myVar)
 
 	sum, status := sum(1, 0)
 
 	fmt.Printf("Sum = %d, First greather than second = %s", sum, strconv.FormatBool((status)))
-
-	http.HandleFunc("/", home)
-	http.ListenAndServe(":8080", nil)
-}
-
-func home(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("HELLO WORLD"))
 }
